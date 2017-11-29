@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo
 
-  portal:
+  leaderboard:
     build: .
     image: leaderboard
     ports:
