@@ -1,0 +1,20 @@
+version: '2'
+services:
+  mongo:
+    image: mongo
+
+  portal:
+    build: .
+    image: leaderboard
+    ports:
+      - "${PORT}:${PORT}"
+    command: npm start
+    working_dir: /usr/portal
+    environment:
+      - PORT=${PORT}
+      - MONGO_URI=mongodb://mongo:27017/leaderboard
+      - NODE_ENV=production
+    links:
+      - mongo
+    depends_on:
+      - mongo
