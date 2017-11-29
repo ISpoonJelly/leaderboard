@@ -9,7 +9,7 @@ services:
     ports:
       - "${PORT}:${PORT}"
     command: npm start
-    working_dir: /usr/portal
+    working_dir: /usr/leaderboard
     environment:
       - PORT=${PORT}
       - MONGO_URI=mongodb://mongo:27017/leaderboard
