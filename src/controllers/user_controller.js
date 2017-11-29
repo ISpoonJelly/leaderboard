@@ -14,7 +14,7 @@ function saveScore(req, res, next) {
 
   let newUser = new User({
     name: user.name,
-    email: user.email
+    email: user.email,
     score: user.score
   });
   newUser.save((err) => {

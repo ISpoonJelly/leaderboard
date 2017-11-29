@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var swig = require('swig');
 var path = require('path');
 
+var userModel = require('./models/users')
 var user_controller = require('./controllers/user_controller');
 
 var app = express();
@@ -39,7 +40,7 @@ if(!module.parent) {
   server.listen(port);
 
   server.on('listening', () => {
-    console.log('[EXPRS]', 'Server is running on %s', port);
+    console.log('[EXPRS]', 'Server is running on', port);
   });
 
   server.on('error', (err) => {
